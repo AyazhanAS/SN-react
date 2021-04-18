@@ -4,6 +4,16 @@
     grid-template-areas: "h h" "n c";
 }
 
+.App-wrapper-var{
+    grid-area: c;
+    background: rgb(141, 77, 125);
+}
+
+
+.App-wrapper-var img{
+    width: 100%;
+    height: 200px;
+}
 
 
 
