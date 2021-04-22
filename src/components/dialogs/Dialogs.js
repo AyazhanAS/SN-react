@@ -1,46 +1,46 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
+import DialogItems from './dialogItems/DialogItems'
 import s from "./Dialogs.module.css"
+import Messages from './messages/Messages'
+
 
 export default function Dialogs(props) {
+
+    let dialogsData = [
+        {id: 1, name: "Almaty"},
+        {id: 2, name: "Nursultan"},
+        {id: 3, name: "Lenger"},
+        {id: 4, name: "Shymkent"},
+        {id: 5, name: "Oral"},
+        {id: 6, name: "Aktobe"},
+        {id: 7, name: "Aktau"},
+        {id: 8, name: "Semey"},
+        {id: 9, name: "Kokshetau"},
+        {id: 10, name: "Tashkent"}
+
+    ]
+
+    let dialogsElements = dialogsData
+    .map(dialog =>  <DialogItems name = {dialog.name} id={dialog.id}/>)
+
+    let messageData = [
+        {id:1, message: "Hello"},
+        {id:2, message: "How are you"},
+        {id:3, message: "How old are you"},
+        {id:4,   message: "Wow!!!"}
+    ]
+
+    let messageElements = messageData
+    .map(messageElem => <Messages message={messageElem.message}/>)
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-
-                <div className={s.dialog + " " + s.active}>
-                    Almaty
-                </div>
-                <div className={s.dialog}>
-                    NurSultan
-                </div>
-                <div className={s.dialog}>
-                    Shymkent
-                </div>
-                <div className={s.dialog}>
-                    Karaganda
-                </div>
-                <div className={s.dialog}>
-                    Aktau
-                </div>
-                <div className={s.dialog}>
-                    Atyrau
-                </div>
-                <div className={s.dialog}>
-                    Lenger
-                </div>
-                <div className={s.dialog}>
-                    Oral
-                </div>
-                <div className={s.dialog}>
-                    Semey
-                </div>
-                <div className={s.dialog}>
-                    Aktobe
-                </div>
+              {dialogsElements}
             </div>
             <div className={s.mesaages}>
-                <div className={s.mesaage}>Hi</div>
-                <div className={s.mesaage}>Hello</div>
-                <div className={s.mesaage}>How are you?</div>
+              {messageElements}
             </div>
         </div>
     )
