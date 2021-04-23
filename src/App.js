@@ -5,26 +5,28 @@ import Nav from './components/navbar/Nav';
 import Header from "./components/header/Header"
 import Dialogs from './components/dialogs/Dialogs';
 import { Route } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
+
 import News from "./components/news/News";
 import Music from "./components/music/Music";
 import Settings from "./components/settings/Settings";
 
-function App() {
+function App(props) {
+
+  
   return (
-    <BrowserRouter>
+    
        <div className="App-wrapper">
           <Header/>
           <Nav/>
           <div className="App-wrapper-var">
-            <Route path="/profile" component={Content}/>
-            <Route path="/dialogs" component={Dialogs}/>
-            <Route path="/news" component={News}/>
-            <Route path="/music" component={Music} />
-            <Route path="/settings" component={Settings} />
+            <Route path="/profile" render={() => <Content state ={props.appState.profilePage}/>}/>
+            <Route path="/dialogs" render={() => <Dialogs state={props.appState.messagePage} />}/>
+            <Route path="/news" render={()=><News/>}/>
+            <Route path="/music" render={()=><Music/>} />
+            <Route path="/settings" render={()=><Settings/>} />
           </div>
        </div>
-    </BrowserRouter>
+
  
   );
 }
