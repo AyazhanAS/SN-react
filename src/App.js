@@ -19,7 +19,7 @@ function App(props) {
           <Header/>
           <Nav/>
           <div className="App-wrapper-var">
-            <Route path="/profile" render={() => <Content state ={props.appState.profilePage}/>}/>
+            <Route path="/profile" render={() => <Content state ={props.appState.profilePage} updateNewPostText={props.updateNewPostText} addPost = {props.addP }/>}/>
             <Route path="/dialogs" render={() => <Dialogs state={props.appState.messagePage} />}/>
             <Route path="/news" render={()=><News/>}/>
             <Route path="/music" render={()=><Music/>} />

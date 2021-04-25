@@ -9,7 +9,11 @@ const Content = (props)=>{
         
         <div>
             <ProfileInfo/>
-            <Myposts postD ={props.state.postData}/>
+            <Myposts postD ={props.state.postData}
+            newPostText = {props.state.newPostText}
+             addPost = {props.addPost}
+             updateNewPostText = {props.updateNewPostText}
+             />
         </div>
     )
 }
