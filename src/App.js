@@ -19,8 +19,8 @@ function App(props) {
           <Header/>
           <Nav/>
           <div className="App-wrapper-var">
-            <Route path="/profile" render={() => <Content store ={props.store}  dispatch = {props.dispatch }/>}/>
-            <Route path="/dialogs" render={() => <DialogsContainer store = {props.store}/>}/>
+            <Route path="/profile" render={() => <Content/>}/>
+            <Route path="/dialogs" render={() => <DialogsContainer />}/>
             <Route path="/news" render={()=><News/>}/>
             <Route path="/music" render={()=><Music/>} />
             <Route path="/settings" render={()=><Settings/>} />
