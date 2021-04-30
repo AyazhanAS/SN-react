@@ -7,13 +7,13 @@ import Messages from './messages/Messages'
 export default function Dialogs(props) {
     
     let state = props.messagePage;
- debugger;
+
     let dialogsElements = state.dialogsData
-    .map(dialog =>  <DialogItems name = {dialog.name} id={dialog.id}/>)
+    .map(dialog =>  <DialogItems name = {dialog.name} id={dialog.id} key = {dialog.id}/>)
 
   
     let messageElements = state.messageData
-    .map(messageElem => <Messages message={messageElem.message}/>)
+    .map(messageElem => <Messages message={messageElem.message} key = {messageElem.id}/>)
 
 
 
