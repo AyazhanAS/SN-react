@@ -6,3 +6,8 @@ div .imgUsers{
 .selectedPage{
     font-weight: bold;
 }
+
+.userWrapper span{
+    margin-left: 8px;
+    cursor: pointer;
+}
