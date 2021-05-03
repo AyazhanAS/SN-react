@@ -11,3 +11,10 @@ div .imgUsers{
     margin-left: 8px;
     cursor: pointer;
 }
+
+.Loader{
+    position: absolute;
+    width: 200px;
+    text-align: left;
+
+}
