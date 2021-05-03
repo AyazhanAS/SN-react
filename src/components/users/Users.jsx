@@ -24,7 +24,7 @@ export default function Users(props) {
                </div>
                <div>
                    {u.followed  
-                   ?<button onClick={()=>{props.unfollow(u.id)}}>UnFollow</button>
+                   ?<button onClick={()=>{props.unFollow(u.id)}}>UnFollow</button>
                    :<button onClick={()=>{props.follow(u.id)}}>Follow</button>}
                    
                </div>
