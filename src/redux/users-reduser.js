@@ -8,7 +8,7 @@ let initialState = {
     users: [ ],
     pageSize:4,
     totalUserCount:0, 
-    currentPage:3
+    currentPage:1
 }
 export const userReduser = (state = initialState, action)=>{
   
