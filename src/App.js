@@ -1,6 +1,5 @@
 
 import './App.css';
-import Content from './components/profile/Content';
 import Nav from './components/navbar/Nav';
 import Header from "./components/header/Header"
 import { Route } from 'react-router';
@@ -10,8 +9,9 @@ import Music from "./components/music/Music";
 import Settings from "./components/settings/Settings";
 import DialogsContainer from './components/dialogs/DialogsContainer';
 import UsersContainer from './components/users/UsersContainer';
+import ProfileContainer from './components/profile/ProfileContainer';
 
-function App(props) {
+function App() {
 
   
   return (
@@ -20,7 +20,7 @@ function App(props) {
           <Header/>
           <Nav/>
           <div className="App-wrapper-var">
-            <Route path="/profile" render={() => <Content/>}/>
+            <Route path="/profile" render={() => <ProfileContainer/>}/>
             <Route path="/dialogs" render={() => <DialogsContainer />}/>
             <Route path="/users" render={() => <UsersContainer/>}/>
             <Route path="/news" render={()=><News/>}/>
