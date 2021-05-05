@@ -11,3 +11,10 @@
     height: 200px;
 
 }
+
+.loginBlock {
+    float: right;
+}
+.loginBlock a{
+    color: aliceblue;
+}
