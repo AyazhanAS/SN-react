@@ -3,7 +3,7 @@ import styles from "./Users.module.css"
 import UserPhoto from "../../assets/user.png"
 import React from 'react';
 import { NavLink } from "react-router-dom";
-import axios from "axios";
+import { getFollow, getUnFollow } from "../../api/api";
 
 
 export default function Users(props) {
@@ -32,12 +32,7 @@ export default function Users(props) {
                    {u.followed  
                    ?<button onClick={()=>{
                        
-                    axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-                        withCredentials:true,
-                        headers: {
-                            "API-KEY": "10785454-965d-41cc-9009-2fd1faf2ce84"
-                        }
-                    })
+                   getFollow(u.id)
                     .then(response =>{
                         if(response.data.resultCode === 0){
                             props.unFollow(u.id)
@@ -48,12 +43,7 @@ export default function Users(props) {
                 
                 }}>UnFollow</button>
                    :<button onClick={()=>{
-                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {},{
-                        withCredentials:true,
-                        headers: {
-                            "API-KEY": "10785454-965d-41cc-9009-2fd1faf2ce84"
-                        }
-                    })
+                   getUnFollow(u.id)
                     .then(response =>{
                         if(response.data.resultCode === 0){
                             props.follow(u.id)
