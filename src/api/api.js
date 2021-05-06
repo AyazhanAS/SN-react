@@ -19,9 +19,9 @@ export const userAPI = {
 
 export const getUnFollow = (id)=>{
   
-    return  instance.delete(`follow/${id}`, {})
+    return  instance.post(`follow/${id}`, {})
 }
 
 export const getFollow = (id)=>{
-    return  instance.post(`follow/${id}`, {},{})  
+    return  instance.delete(`follow/${id}`, {},{})  
 }
