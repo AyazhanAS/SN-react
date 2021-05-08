@@ -3,7 +3,8 @@ import styles from "./Users.module.css"
 import UserPhoto from "../../assets/user.png"
 import React from 'react';
 import { NavLink } from "react-router-dom";
-import { getFollow, getUnFollow } from "../../api/api";
+
+
 
 
 export default function Users(props) {
@@ -30,37 +31,8 @@ export default function Users(props) {
                </div>
                <div>
                    {u.followed  
-                   ?<button disabled = {props.followingInProgress.some(id=> id===u.id)} onClick={()=>{
-
-                    props.toggleFollowingProgress(true, u.id)   
-                   getFollow(u.id)
-                    .then(response =>{
-                        if(response.data.resultCode === 0){
-                            props.unFollow(u.id)
-                        }
-                        props.toggleFollowingProgress(false, u.id)
-                    }
-                    )
-                 
-                
-                }}>UnFollow</button>
-                   :<button disabled = {
-                       props.followingInProgress.some(id=> id===u.id)}  onClick={()=>{
-                    
-                    props.toggleFollowingProgress(true, u.id)
-                   getUnFollow(u.id)
-                    .then(response =>{
-                        if(response.data.resultCode === 0){
-                            props.follow(u.id)
-                        }
-                        props.toggleFollowingProgress(false, u.id)
-                    }
-                    )
-                       
-                    
-                       
-                       
-                }}>Follow</button>}
+                   ?<button disabled = {props.followingInProgress.some(id=> id===u.id)} onClick={()=>{props.unFollow(u.id)}}>UnFollow</button>
+                   :<button disabled = {props.followingInProgress.some(id=> id===u.id)}  onClick={()=>{props.follow(u.id)}}>Follow</button>}
                    
                </div>
            </span>
