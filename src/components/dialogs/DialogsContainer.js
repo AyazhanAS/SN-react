@@ -7,8 +7,10 @@ import Dialogs from "./Dialogs"
 
 
 let mapStateToProps = (state)=>{
+    
     return {
-        messagePage: state.messagePage
+        messagePage: state.messagePage,
+        isAuth:state.auth.isAuth
         
     }
 }

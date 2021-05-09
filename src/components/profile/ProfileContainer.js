@@ -23,5 +23,8 @@ class ProfileContainer extends Component {
 }
 
 let WithUrlDataContainerConponent = withRouter(ProfileContainer);
-let mapStateToProps = (state) =>({profile: state.profilePage.profile})
+let mapStateToProps = (state) =>({
+    profile: state.profilePage.profile,
+    isAuth:state.auth.isAuth
+})
 export default connect(mapStateToProps, {getUserProfile})(WithUrlDataContainerConponent)
