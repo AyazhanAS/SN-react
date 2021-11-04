@@ -1,12 +1,12 @@
 import React  from 'react';
-import { Redirect } from 'react-router';
+
 import DialogItems from './dialogItems/DialogItems'
 import s from "./Dialogs.module.css"
 import Messages from './messages/Messages'
 
 
 export default function Dialogs(props) {
-    debugger
+
     let state = props.messagePage;
 
     let dialogsElements = state.dialogsData
@@ -26,11 +26,6 @@ export default function Dialogs(props) {
     let onSendMessageClick = ()=>{
         props.sendMessage();
     }
-
-    if(!props.isAuth){
-        return <Redirect to = {"/Login"}/>
-    }
-    
 
 
     return (
