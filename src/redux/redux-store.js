@@ -4,7 +4,9 @@ import { messageReducer } from "./message-reducer";
 import { profileReducer } from "./profile-reducer";
 import { sidebarReducer } from "./sidebar-reducer";
 import { userReduser } from "./users-reduser";
-import thunkMiddleware from "redux-thunk"
+import thunkMiddleware from "redux-thunk";
+
+import {reducer as formReducer} from 'redux-form';
 
 
 
@@ -14,7 +16,8 @@ let reducers = combineReducers(
         messagePage: messageReducer,
         sideBar: sidebarReducer, 
         usersPage: userReduser,
-        auth: authReducer
+        auth: authReducer,
+        form:formReducer
     }
 );
 
