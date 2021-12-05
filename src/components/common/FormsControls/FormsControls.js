@@ -2,7 +2,7 @@ import classes from "./FormsControls.module.css"
 
 
 const FormControl = ({ input, meta,child,...props }) => {
-    debugger;
+    
     const hasError = meta.touched && meta.error;
     return (
         <div className={classes.formControl + " " + ( hasError? classes.error : "")}>
