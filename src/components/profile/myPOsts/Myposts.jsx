@@ -8,6 +8,7 @@ import { TextArea } from "../../common/FormsControls/FormsControls";
 const maxLenght10 = maxLengthCreator(10);
 
 const Myposts = (props) => {
+    console.log("render");
     
     let postElements = props.postD
     .map(postEl =>

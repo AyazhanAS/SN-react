@@ -3,6 +3,7 @@ import React from 'react'
 import { Preloader } from '../../common/preloader/Preloader'
 import s from"./ProfileInfo.module.css"
 import ProfileStatus from './ProfileStatus'
+import ProfileStatusWithHooks from './ProfileStatusWithHooks.jsx'
 
 export default function ProfileInfo(props) {
 
@@ -26,7 +27,7 @@ export default function ProfileInfo(props) {
                 </div>
             </div>
             <div className={s.statusBlock}>
-                    <ProfileStatus status = {props.status} updateStatus={props.updateStatus}/>
+                    <ProfileStatusWithHooks status = {props.status} updateStatus={props.updateStatus}/>
                 </div>
             
         </div>
